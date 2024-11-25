@@ -30,10 +30,14 @@ public class Main {
                     System.out.println("Interagir com Droga");
                     break;
                 case 3:
-//                    interagirComTabela(new ComidaManager(), scanner);
-//                    break;
-//                    System.out.println("Interagir com Comida");
+                    interagirComTabela(new ComidaManager(), scanner);
+                    System.out.println("Interagir com Comida");
+                    break;
                 case 4:
+//                    interagirComTabela(new EventoManager(), scanner);
+//                    System.out.println("Interagir com Evento");
+//                    break;
+                case 5:
                     System.out.println("Encerrando o programa...");
                     continuarPrograma = false;
                     break;
