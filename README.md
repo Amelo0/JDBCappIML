@@ -4,8 +4,9 @@ Projeto 3 ( Ultimo ) Na cadeira Banco de Dados
 ### Equipe:
 - Arthur Melo
 
+
 ### Framework Usado:
-JDBC
+JDBC + connect/j
 
 ## Neste repo seguem em anexo:
 - Classes que compõe a aplicação pedida no enunciado
@@ -13,5 +14,5 @@ JDBC
 - Libs Externas importadas
   -> JDBC: connector j (driver do jdbc)
 - Outras Midias do trabalho
-  -> Slides
+  -> Imagem do modelo conceitual atualizado
   -> Roteiro do Pitch
