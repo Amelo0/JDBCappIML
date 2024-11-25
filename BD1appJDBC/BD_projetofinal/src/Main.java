@@ -10,8 +10,10 @@ public class Main {
             System.out.println("\n--- MENU INICIAL ---");
             System.out.println("Escolha a tabela para interagir:");
             System.out.println("1. Paciente");
-            System.out.println("2. Médico");
-            System.out.println("3. Consulta");
+            System.out.println("2. Droga");
+            System.out.println("3. Comida");
+            //Adicionar 4a tabela acessaval
+            //tornar 5 fecher programa
             System.out.println("4. Fechar programa");
             System.out.print("Escolha uma opção: ");
 
@@ -23,13 +25,14 @@ public class Main {
                     interagirComTabela(new PacienteManager(), scanner);
                     break;
                 case 2:
-//                    interagirComTabela(new MedicoManager(), scanner);
-//                    break;
-                    System.out.println("Interagir com Medico");
+                    interagirComTabela(new DrogaManager(), scanner);
+
+                    System.out.println("Interagir com Droga");
+                    break;
                 case 3:
-//                    interagirComTabela(new ConsultaManager(), scanner);
+//                    interagirComTabela(new ComidaManager(), scanner);
 //                    break;
-                    System.out.println("Interagir com consulta");
+//                    System.out.println("Interagir com Comida");
                 case 4:
                     System.out.println("Encerrando o programa...");
                     continuarPrograma = false;
