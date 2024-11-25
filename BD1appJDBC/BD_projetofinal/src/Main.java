@@ -1,7 +1,5 @@
 import java.util.Scanner;
-
 public class Main {
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         boolean continuarPrograma = true;
@@ -12,9 +10,8 @@ public class Main {
             System.out.println("1. Paciente");
             System.out.println("2. Droga");
             System.out.println("3. Comida");
-            //Adicionar 4a tabela acessaval
-            //tornar 5 fecher programa
-            System.out.println("4. Fechar programa");
+            System.out.println("4. Evento");
+            System.out.println("5. Fechar programa");
             System.out.print("Escolha uma opção: ");
 
             int tabelaEscolhida = scanner.nextInt();
@@ -34,9 +31,9 @@ public class Main {
                     System.out.println("Interagir com Comida");
                     break;
                 case 4:
-//                    interagirComTabela(new EventoManager(), scanner);
-//                    System.out.println("Interagir com Evento");
-//                    break;
+                    interagirComTabela(new EventoManager(), scanner);
+                    System.out.println("Interagir com Evento");
+                    break;
                 case 5:
                     System.out.println("Encerrando o programa...");
                     continuarPrograma = false;
@@ -45,13 +42,11 @@ public class Main {
                     System.out.println("Opção inválida! Tente novamente.");
             }
         }
-
         scanner.close();
     }
 
     private static void interagirComTabela(Manager manager, Scanner scanner) {
         boolean continuarTabela = true;
-
         while (continuarTabela) {
             System.out.println("\n--- MENU DE OPERAÇÕES ---");
             System.out.println("1. Inserir");
