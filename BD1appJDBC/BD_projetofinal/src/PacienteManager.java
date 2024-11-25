@@ -3,9 +3,9 @@ import java.util.Scanner;
 
 public class PacienteManager implements Manager {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/nome_do_banco";
+    private static final String URL = "jdbc:mysql://localhost:3306/iml_bd";
     private static final String USER = "root";
-    private static final String PASSWORD = "";
+    private static final String PASSWORD = "00000";
 
     @Override
     public void inserir(Scanner scanner) {
