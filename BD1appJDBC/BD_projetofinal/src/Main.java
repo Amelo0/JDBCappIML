@@ -6,7 +6,8 @@ public class Main {
 
         while (continuarPrograma) {
             System.out.println("\n--- MENU INICIAL ---");
-            System.out.println("Escolha a tabela para interagir:");
+            System.out.println("Bem vindo Sistema de Gerenciamento de dados!");
+            System.out.println("Escolha a Tabela-Entidade para interagir:");
             System.out.println("1. Paciente");
             System.out.println("2. Droga");
             System.out.println("3. Comida");
@@ -49,6 +50,7 @@ public class Main {
         boolean continuarTabela = true;
         while (continuarTabela) {
             System.out.println("\n--- MENU DE OPERAÇÕES ---");
+            System.out.println("Qual operação deseja realizar?");
             System.out.println("1. Inserir");
             System.out.println("2. Listar");
             System.out.println("3. Atualizar");
