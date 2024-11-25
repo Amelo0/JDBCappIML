@@ -1,0 +1,51 @@
+CREATE TABLE Cliente (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    Nome VARCHAR(100) NOT NULL,
+    Conta DECIMAL(10, 2),
+    PedidoID INT
+);
+
+CREATE TABLE Comida (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    Nome VARCHAR(100) NOT NULL,
+    Preco DECIMAL(10, 2) NOT NULL,
+    Disponibilidade INT NOT NULL
+);
+
+CREATE TABLE Bebida (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    Nome VARCHAR(100) NOT NULL,
+    Preco DECIMAL(10, 2) NOT NULL,
+    Disponibilidade INT NOT NULL
+);
+
+CREATE TABLE pedido (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    ClienteID INT NOT NULL,
+    Quantidade INT NOT NULL,
+    FuncionarioID INT NOT NULL,
+    FOREIGN KEY (ClienteID) REFERENCES Cliente(ID),
+    FOREIGN KEY (FuncionarioID) REFERENCES Funcionario(ID)
+);
+
+CREATE TABLE funcionario (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    Nome VARCHAR(100) NOT NULL,
+    Ocupacao VARCHAR(50)
+);
+
+CREATE TABLE Pedido_Comida (
+    PedidoID INT NOT NULL,
+    ComidaID INT NOT NULL,
+    PRIMARY KEY (PedidoID, ComidaID),
+    FOREIGN KEY (PedidoID) REFERENCES Pedido(ID),
+    FOREIGN KEY (ComidaID) REFERENCES Comida(ID)
+);
+
+CREATE TABLE Pedido_Bebida (
+    PedidoID INT NOT NULL,
+    BebidaID INT NOT NULL,
+    PRIMARY KEY (PedidoID, BebidaID),
+    FOREIGN KEY (PedidoID) REFERENCES Pedido(ID),
+    FOREIGN KEY (BebidaID) REFERENCES Bebida(ID)
+);

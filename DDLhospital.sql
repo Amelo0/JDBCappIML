@@ -1,0 +1,47 @@
+CREATE TABLE Paciente (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    Nome VARCHAR(100) NOT NULL,
+    Idade INT NOT NULL,
+    CPF VARCHAR(11) UNIQUE NOT NULL
+);
+
+CREATE TABLE Medico (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    Nome VARCHAR(100) NOT NULL,
+    Atuacao VARCHAR(50),
+    CRM VARCHAR(15) UNIQUE NOT NULL,
+    Turno VARCHAR(20)
+);
+
+CREATE TABLE Consulta (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    Data DATE NOT NULL,
+    Causa VARCHAR(200),
+    Diagnostico VARCHAR(200),
+    PacienteID INT NOT NULL,
+    MedicoID INT NOT NULL,
+    EnfermeiroID INT NOT NULL,
+    FOREIGN KEY (PacienteID) REFERENCES Paciente(ID),
+    FOREIGN KEY (MedicoID) REFERENCES Medico(ID),
+    FOREIGN KEY (EnfermeiroID) REFERENCES Enfermeiro(ID)
+);
+
+CREATE TABLE Enfermeiro (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    Nome VARCHAR(100) NOT NULL,
+    Turno VARCHAR(20)
+);
+
+CREATE TABLE Droga (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    Nome VARCHAR(100) NOT NULL,
+    Disponibilidade INT NOT NULL
+);
+
+CREATE TABLE Consulta_Droga (
+    ConsultaID INT NOT NULL,
+    DrogaID INT NOT NULL,
+    PRIMARY KEY (ConsultaID, DrogaID),
+    FOREIGN KEY (ConsultaID) REFERENCES Consulta(ID),
+    FOREIGN KEY (DrogaID) REFERENCES Droga(ID)
+);
